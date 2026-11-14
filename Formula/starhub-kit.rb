@@ -1,8 +1,8 @@
 class StarhubKit < Formula
-  desc "Declarative compiler for Tailscale 4via6, split-DNS, and AI sandbox firewalls"
+  desc "Compiler for AI sandbox firewalls, Tailscale 4via6, split-DNS, and MCP"
   homepage "https://github.com/Ziqi/starhub-kit"
-  url "https://github.com/Ziqi/starhub-kit/releases/download/v1.2.0/starhub-kit-v1.2.0.tar.gz"
-  sha256 "2e14ca825474ebea21b677705ccdcd151539700406bab6e3e0154ae9bcefd7ba"
+  url "https://github.com/Ziqi/starhub-kit/releases/download/v1.3.0/starhub-kit-v1.3.0.tar.gz"
+  sha256 "f457c55abba087f2fd9ef66dbc5c685e62db6e4396a1d7f23de06ef0a9f6d3a7"
   license "MIT"
 
   depends_on "python@3.12"
@@ -19,8 +19,9 @@ class StarhubKit < Formula
   end
 
   test do
-    output = shell_output("#{bin}/starhub render --profile minimal --only mihomo --dry-run")
-    assert_match "DRY-RUN PREVIEW", output
+    output = shell_output("#{bin}/starhub render --profile ai-sandbox --target nftables --dry-run")
+    assert_match "table inet starhub_sandbox", output
+    system bin/"starhub", "audit"
     system bin/"starhub", "render", "--check"
     system bin/"starhub", "doctor", "--local-docs-only"
   end
