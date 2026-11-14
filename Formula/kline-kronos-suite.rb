@@ -20,7 +20,7 @@ class KlineKronosSuite < Formula
   end
 
   test do
-    output = shell_output("#{bin}/kline-kronos demo --market us")
+    output = shell_output("#{bin}/kline-kronos demo")
     assert_match "zero-setup-stdlib-demo", output
   end
 end

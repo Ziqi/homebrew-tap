@@ -25,7 +25,7 @@ starshield demo
 
 # 3. KLine Kronos Suite — Multi-market (US/Crypto/HK/CN) OHLCV cleaner, leakage auditor & MCP CLI
 brew install Ziqi/tap/kline-kronos-suite
-kline-kronos demo --market us
+kline-kronos demo
 ```
 
 ---
