@@ -8,7 +8,8 @@ class KlineKronosSuite < Formula
   depends_on "python@3.12"
 
   def install
-    libexec.install buildpath.children
+    libexec.mkpath
+    system "cp", "-R", ".", libexec
     (bin/"kline-kronos").write <<~EOS
       #!/bin/bash
       set -euo pipefail
