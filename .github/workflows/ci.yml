@@ -30,9 +30,12 @@ jobs:
           export HOMEBREW_NO_INSTALL_CLEANUP=1
           ruby -c Formula/starhub-kit.rb
           ruby -c Formula/kline-kronos-suite.rb
+          ruby -c Formula/starshield-forensics.rb
           brew tap-new --no-git local/testtap
           cp Formula/*.rb "$(brew --repository local/testtap)/Formula/"
           brew install --formula local/testtap/starhub-kit
           brew test local/testtap/starhub-kit
           brew install --formula local/testtap/kline-kronos-suite
           brew test local/testtap/kline-kronos-suite
+          brew install --formula local/testtap/starshield-forensics
+          brew test local/testtap/starshield-forensics
