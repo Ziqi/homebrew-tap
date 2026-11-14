@@ -1,0 +1,38 @@
+name: Homebrew Tap Formula Audit & Install Test
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  verify-formulas:
+    name: Brew Install & Smoke Test (Linuxbrew)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout tap repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Validate Ruby syntax, install from release tarballs & run brew test
+        run: |
+          if [ -x /home/linuxbrew/.linuxbrew/bin/brew ]; then
+            eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          fi
+          export HOMEBREW_NO_AUTO_UPDATE=1
+          export HOMEBREW_NO_INSTALL_CLEANUP=1
+          ruby -c Formula/starhub-kit.rb
+          ruby -c Formula/kline-kronos-suite.rb
+          brew tap-new --no-git local/testtap
+          cp Formula/*.rb "$(brew --repository local/testtap)/Formula/"
+          brew install --formula local/testtap/starhub-kit
+          brew test local/testtap/starhub-kit
+          brew install --formula local/testtap/kline-kronos-suite
+          brew test local/testtap/kline-kronos-suite
