@@ -1,8 +1,8 @@
 class StarshieldForensics < Formula
-  desc "Clean-room deterministic Chromium LevelDB .log carver and DFIR triage CLI"
+  desc "Offline Chromium LevelDB carver, screenshot ICC inspector, and MCP CLI"
   homepage "https://ziqi.github.io/starshield/"
-  url "https://github.com/Ziqi/starshield-forensics/releases/download/v0.3.7/starshield_forensics-0.3.7.tar.gz"
-  sha256 "2dd56e823d46fd41d570ee6281d98db120ad64e64b55950827ef57c186e40edd"
+  url "https://files.pythonhosted.org/packages/e2/21/8243e23c9008f5f2a74c8f22435fbc8dc17378d576939b163b24aed4da29/starshield_forensics-0.3.8.tar.gz"
+  sha256 "87afc0617eedd5a760a5ddfb7ab5ba002dc930ff25db7ad7cd2d8bd115e19325"
   license "MIT"
 
   depends_on "python@3.12"
@@ -21,6 +21,8 @@ class StarshieldForensics < Formula
 
   test do
     output = shell_output("#{bin}/starshield demo")
-    assert_match "starshield-forensics/0.3.7", output
+    assert_match "starshield-forensics/0.3.8", output
+    mcp_out = pipe_output("#{bin}/starshield mcp", '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' + "\n")
+    assert_match "starshield_demo", mcp_out
   end
 end

@@ -19,9 +19,10 @@ starhub render --profile ai-sandbox --target all --dry-run
 starhub audit
 # Note: when writing rendered bundles to disk, pass --out-dir ./dist
 
-# 2. StarShield Forensics — Clean-room offline Chromium LevelDB .log carver & DFIR triage CLI
+# 2. StarShield Forensics — Offline Chromium/Electron LevelDB carver, screenshot ICC inspector & MCP CLI
 brew install Ziqi/tap/starshield-forensics
 starshield demo
+starshield mcp
 
 # 3. KLine Kronos Suite — Multi-market (US/Crypto/HK/CN) OHLCV cleaner, leakage auditor & MCP CLI
 brew install Ziqi/tap/kline-kronos-suite
@@ -35,7 +36,7 @@ kline-kronos demo
 | Formula | Purpose | Upstream & Version | Supply-Chain Provenance |
 | :--- | :--- | :--- | :--- |
 | **`starhub-kit`** | AI Agent sandbox firewall (`nftables`, `macOS pf`, `Tailscale ACL`), `Sing-box`/`Mihomo` QUIC routing, security auditor, and native `MCP` server | [`Ziqi/starhub-kit`](https://github.com/Ziqi/starhub-kit) (`v1.3.0`) | OpenSSF Silver `#16658` · SLSA L3 · Ed25519 `.sig` · SWHID `swh:1:snp:0a98e8ee` |
-| **`starshield-forensics`** | Clean-room deterministic Chromium LevelDB `.log` carver, PNG/JPEG ICC provenance inspector, and financial checksum validator | [`Ziqi/starshield-forensics`](https://github.com/Ziqi/starshield-forensics) (`v0.3.7`) | OpenSSF Silver `#16602` · PyPI PEP 740 · SLSA L3 · Zenodo `10.5281/zenodo.24145804` |
+| **`starshield-forensics`** | Offline Chromium/Electron LevelDB `.log` carver, PNG/JPEG screenshot ICC inspector, financial checksum validator, and native `MCP` server | [`Ziqi/starshield-forensics`](https://github.com/Ziqi/starshield-forensics) (`v0.3.8`) | OpenSSF Silver `#16602` · PyPI PEP 740 · SLSA L3 · Zenodo `10.5281/zenodo.24145804` |
 | **`kline-kronos-suite`** | Multi-market (`US`/`Crypto`/`HK`/`CN`) intraday OHLCV cleaner, look-ahead leakage auditor, JSONL window exporter, and native `MCP` server | [`Ziqi/KLine-Kronos-Suite`](https://github.com/Ziqi/KLine-Kronos-Suite) (`v1.2.0`) | OpenSSF Silver `#16679` · SLSA L3 · Ed25519 `.sig` · SWHID `swh:1:snp:d3ac3e0d` |
 
 ---
