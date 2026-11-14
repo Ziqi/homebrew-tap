@@ -20,7 +20,7 @@ class StarhubKit < Formula
 
   test do
     output = shell_output("#{bin}/starhub render --profile ai-sandbox --target nftables --dry-run")
-    assert_match "table inet starhub_sandbox", output
+    assert_match "table inet starhub_ai_guard", output
     system bin/"starhub", "audit"
     system bin/"starhub", "render", "--check"
     system bin/"starhub", "doctor", "--local-docs-only"
