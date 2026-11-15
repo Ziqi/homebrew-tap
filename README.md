@@ -3,7 +3,7 @@
 [![Tap CI](https://github.com/Ziqi/homebrew-tap/actions/workflows/ci.yml/badge.svg)](https://github.com/Ziqi/homebrew-tap/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
-Official **Homebrew** (macOS & Linuxbrew) tap for zero-dependency open-source network infrastructure, digital forensics (DFIR), and quantitative data engineering toolkits maintained by [`@Ziqi`](https://github.com/Ziqi). Every formula installs directly from bit-for-bit reproducible, Sigstore **SLSA Build Level 3** attested release tarballs.
+Official **Homebrew** (macOS & Linuxbrew) tap for zero-dependency open-source network infrastructure, digital forensics (DFIR), BEC incident-triage, and quantitative data engineering toolkits maintained by [`@Ziqi`](https://github.com/Ziqi). Every formula installs directly from bit-for-bit reproducible, Sigstore **SLSA Build Level 3** attested release artifacts.
 
 ---
 
@@ -24,7 +24,11 @@ brew install Ziqi/tap/starshield-forensics
 starshield demo
 starshield mcp
 
-# 3. KLine Kronos Suite — Multi-market (US/Crypto/HK/CN) OHLCV cleaner, leakage auditor & MCP CLI
+# 3. ClearLens — Zero-backend BEC/wire-fraud triage workbench, outbound DLP & multi-currency recall ledger
+brew install Ziqi/tap/clearlens
+clearlens demo
+
+# 4. KLine Kronos Suite — Multi-market (US/Crypto/HK/CN) OHLCV cleaner, leakage auditor & MCP CLI
 brew install Ziqi/tap/kline-kronos-suite
 kline-kronos demo
 ```
@@ -37,6 +41,7 @@ kline-kronos demo
 | :--- | :--- | :--- | :--- |
 | **`starhub-kit`** | AI Agent sandbox firewall (`nftables`, `macOS pf`, `Tailscale ACL`), `Sing-box`/`Mihomo` QUIC routing, security auditor, and native `MCP` server | [`Ziqi/starhub-kit`](https://github.com/Ziqi/starhub-kit) (`v1.3.0`) | OpenSSF Silver `#16658` · SLSA L3 · Ed25519 `.sig` · SWHID `swh:1:snp:0a98e8ee` |
 | **`starshield-forensics`** | Offline Chromium/Electron LevelDB `.log` carver, PNG/JPEG screenshot ICC inspector, financial checksum validator, and native `MCP` server | [`Ziqi/starshield-forensics`](https://github.com/Ziqi/starshield-forensics) (`v0.3.8`) | OpenSSF Silver `#16602` · PyPI PEP 740 · SLSA L3 · Zenodo `10.5281/zenodo.24145804` |
+| **`clearlens`** | Zero-backend BEC, wire fraud & digital coercion triage workbench with outbound DLP guardrails, multi-currency FX stripping, and offline CSP web app | [`Ziqi/clearlens`](https://github.com/Ziqi/clearlens) (`v1.0.0`) | SLSA L3 · REUSE 3.3 · Offline CSP (`default-src 'none'`) · SWHID `swh:1:snp:3f624661` |
 | **`kline-kronos-suite`** | Multi-market (`US`/`Crypto`/`HK`/`CN`) intraday OHLCV cleaner, look-ahead leakage auditor, JSONL window exporter, and native `MCP` server | [`Ziqi/KLine-Kronos-Suite`](https://github.com/Ziqi/KLine-Kronos-Suite) (`v1.2.0`) | OpenSSF Silver `#16679` · SLSA L3 · Ed25519 `.sig` · SWHID `swh:1:snp:d3ac3e0d` |
 
 ---

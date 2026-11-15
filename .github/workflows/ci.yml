@@ -31,6 +31,7 @@ jobs:
           ruby -c Formula/starhub-kit.rb
           ruby -c Formula/kline-kronos-suite.rb
           ruby -c Formula/starshield-forensics.rb
+          ruby -c Formula/clearlens.rb
           brew tap-new --no-git local/testtap
           cp Formula/*.rb "$(brew --repository local/testtap)/Formula/"
           brew install --formula local/testtap/starhub-kit
@@ -39,3 +40,5 @@ jobs:
           brew test local/testtap/kline-kronos-suite
           brew install --formula local/testtap/starshield-forensics
           brew test local/testtap/starshield-forensics
+          brew install --formula local/testtap/clearlens
+          brew test local/testtap/clearlens
