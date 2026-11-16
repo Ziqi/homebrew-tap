@@ -33,6 +33,7 @@ jobs:
           ruby -c Formula/starshield-forensics.rb
           ruby -c Formula/clearlens.rb
           ruby -c Formula/starcouncil.rb
+          ruby -c Formula/diffquorum.rb
           brew tap-new --no-git local/testtap
           cp Formula/*.rb "$(brew --repository local/testtap)/Formula/"
           brew install --formula local/testtap/starhub-kit
@@ -45,3 +46,5 @@ jobs:
           brew test local/testtap/clearlens
           brew install --formula local/testtap/starcouncil
           brew test local/testtap/starcouncil
+          brew install --formula local/testtap/diffquorum
+          brew test local/testtap/diffquorum

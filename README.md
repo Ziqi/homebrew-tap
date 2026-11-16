@@ -32,9 +32,10 @@ clearlens demo
 brew install Ziqi/tap/kline-kronos-suite
 kline-kronos demo
 
-# 5. StarCouncil — Pointer-Over-Blackboard orchestration, anti-fake-council verifier & 6-gate wakeup CLI
-brew install Ziqi/tap/starcouncil
-starcouncil init --root /tmp/sc-demo && starcouncil doctor --root /tmp/sc-demo
+# 5. DiffQuorum — Blind peer anti-fake-quorum verifier, <400B pointer blackboard, modal-safe wake & 0-token preflight
+brew install Ziqi/tap/diffquorum
+diffquorum init --root /tmp/dq-demo && diffquorum preflight --root /tmp/dq-demo --cli python3 && diffquorum doctor --root /tmp/dq-demo
+# Backward-compatibility alias (`starcouncil`) is also available via `brew install Ziqi/tap/starcouncil`
 ```
 
 ---
@@ -47,7 +48,7 @@ starcouncil init --root /tmp/sc-demo && starcouncil doctor --root /tmp/sc-demo
 | **`starshield-forensics`** | Offline Chromium/Electron LevelDB `.log` carver, PNG/JPEG screenshot ICC inspector, financial checksum validator, and native `MCP` server | [`Ziqi/starshield-forensics`](https://github.com/Ziqi/starshield-forensics) (`v0.3.8`) | OpenSSF Silver `#16602` · PyPI PEP 740 · SLSA L3 · Zenodo `10.5281/zenodo.24145804` |
 | **`clearlens`** | Zero-backend BEC, wire fraud & digital coercion triage workbench with outbound DLP guardrails, multi-currency FX stripping, and offline CSP web app | [`Ziqi/clearlens`](https://github.com/Ziqi/clearlens) (`v1.0.0`) | OpenSSF Silver `#16718` · SLSA L3 · REUSE 3.3 · Offline CSP (`default-src 'none'`) · SWHID `swh:1:snp:3f624661` |
 | **`kline-kronos-suite`** | Multi-market (`US`/`Crypto`/`HK`/`CN`) intraday OHLCV cleaner, look-ahead leakage auditor, JSONL window exporter, and native `MCP` server | [`Ziqi/KLine-Kronos-Suite`](https://github.com/Ziqi/KLine-Kronos-Suite) (`v1.2.0`) | OpenSSF Silver `#16679` · SLSA L3 · Ed25519 `.sig` · SWHID `swh:1:snp:d3ac3e0d` |
-| **`starcouncil`** | Pointer-Over-Blackboard orchestration (`BOARD.md <3KB` / `<400B`), SHA-256 anti-fake-council verifier, 6-gate idle wakeup & tiered review CLI | [`Ziqi/starcouncil`](https://github.com/Ziqi/starcouncil) (`v0.1.1`) | OpenSSF Silver `#16755` · SLSA L3 · Ed25519 `.sig` · SWHID `swh:1:snp:8ebe52ea` |
+| **`diffquorum`** (`starcouncil` alias) | `<400B` pointer blackboard, Stage-2 blind `Peer A/B/C` anti-fake-quorum verifier, modal-safe 6-gate idle wakeup & `<1s` zero-token `preflight` | [`Ziqi/diffquorum`](https://github.com/Ziqi/diffquorum) (`v0.2.0`) | OpenSSF Silver `#16755` · SLSA L3 · Ed25519 `.sig` · SWHID `swh:1:snp:8ebe52ea` |
 
 ---
 

@@ -1,8 +1,8 @@
 class Starcouncil < Formula
-  desc "Pointer-Over-Blackboard orchestration, anti-fake-council verifier & 6-gate wakeup CLI"
-  homepage "https://github.com/Ziqi/starcouncil"
-  url "https://github.com/Ziqi/starcouncil/releases/download/v0.1.1/starcouncil-v0.1.1.tar.gz"
-  sha256 "9d3bfbdec5694729d6abe3221bd96d1bc1a61d47eca9b274cd66f5a15d4a1af2"
+  desc "Compatibility alias for DiffQuorum (pointer blackboard, blind quorum & 6-gate wakeup CLI)"
+  homepage "https://github.com/Ziqi/diffquorum"
+  url "https://github.com/Ziqi/diffquorum/releases/download/v0.2.0/diffquorum-v0.2.0.tar.gz"
+  sha256 "9c20bf25a75a25c6959a50663f782473ec34de82c73bc9ed24c7813d8d08fd2f"
   license "MIT"
 
   depends_on "python@3.12"
@@ -20,9 +20,9 @@ class Starcouncil < Formula
 
   test do
     ver_out = shell_output("#{bin}/starcouncil --version")
-    assert_match "0.1.1", ver_out
+    assert_match "0.2.0", ver_out
     system bin/"starcouncil", "init", "--root", testpath/"sc-demo"
     system bin/"starcouncil", "doctor", "--root", testpath/"sc-demo"
-    system bin/"starcouncil", "council", "--root", testpath/"sc-demo", "--topic", "Brew smoke test"
+    system bin/"starcouncil", "council", "--root", testpath/"sc-demo", "--topic", "Brew compat test"
   end
 end
