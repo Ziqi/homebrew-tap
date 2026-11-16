@@ -31,6 +31,10 @@ clearlens demo
 # 4. KLine Kronos Suite — Multi-market (US/Crypto/HK/CN) OHLCV cleaner, leakage auditor & MCP CLI
 brew install Ziqi/tap/kline-kronos-suite
 kline-kronos demo
+
+# 5. StarCouncil — Pointer-Over-Blackboard orchestration, anti-fake-council verifier & 6-gate wakeup CLI
+brew install Ziqi/tap/starcouncil
+starcouncil init --root /tmp/sc-demo && starcouncil doctor --root /tmp/sc-demo
 ```
 
 ---
@@ -41,8 +45,9 @@ kline-kronos demo
 | :--- | :--- | :--- | :--- |
 | **`starhub-kit`** | AI Agent sandbox firewall (`nftables`, `macOS pf`, `Tailscale ACL`), `Sing-box`/`Mihomo` QUIC routing, security auditor, and native `MCP` server | [`Ziqi/starhub-kit`](https://github.com/Ziqi/starhub-kit) (`v1.3.0`) | OpenSSF Silver `#16658` · SLSA L3 · Ed25519 `.sig` · SWHID `swh:1:snp:0a98e8ee` |
 | **`starshield-forensics`** | Offline Chromium/Electron LevelDB `.log` carver, PNG/JPEG screenshot ICC inspector, financial checksum validator, and native `MCP` server | [`Ziqi/starshield-forensics`](https://github.com/Ziqi/starshield-forensics) (`v0.3.8`) | OpenSSF Silver `#16602` · PyPI PEP 740 · SLSA L3 · Zenodo `10.5281/zenodo.24145804` |
-| **`clearlens`** | Zero-backend BEC, wire fraud & digital coercion triage workbench with outbound DLP guardrails, multi-currency FX stripping, and offline CSP web app | [`Ziqi/clearlens`](https://github.com/Ziqi/clearlens) (`v1.0.0`) | SLSA L3 · REUSE 3.3 · Offline CSP (`default-src 'none'`) · SWHID `swh:1:snp:3f624661` |
+| **`clearlens`** | Zero-backend BEC, wire fraud & digital coercion triage workbench with outbound DLP guardrails, multi-currency FX stripping, and offline CSP web app | [`Ziqi/clearlens`](https://github.com/Ziqi/clearlens) (`v1.0.0`) | OpenSSF Silver `#16718` · SLSA L3 · REUSE 3.3 · Offline CSP (`default-src 'none'`) · SWHID `swh:1:snp:3f624661` |
 | **`kline-kronos-suite`** | Multi-market (`US`/`Crypto`/`HK`/`CN`) intraday OHLCV cleaner, look-ahead leakage auditor, JSONL window exporter, and native `MCP` server | [`Ziqi/KLine-Kronos-Suite`](https://github.com/Ziqi/KLine-Kronos-Suite) (`v1.2.0`) | OpenSSF Silver `#16679` · SLSA L3 · Ed25519 `.sig` · SWHID `swh:1:snp:d3ac3e0d` |
+| **`starcouncil`** | Pointer-Over-Blackboard orchestration (`BOARD.md <3KB` / `<400B`), SHA-256 anti-fake-council verifier, 6-gate idle wakeup & tiered review CLI | [`Ziqi/starcouncil`](https://github.com/Ziqi/starcouncil) (`v0.1.1`) | OpenSSF Silver `#16755` · SLSA L3 · Ed25519 `.sig` · SWHID `swh:1:snp:8ebe52ea` |
 
 ---
 
