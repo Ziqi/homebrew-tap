@@ -1,8 +1,8 @@
 class StarshieldForensics < Formula
-  desc "Offline Chromium LevelDB carver, screenshot ICC inspector, and MCP CLI"
+  desc "Offline Chromium LevelDB carver, container inspector, and read-only MCP CLI"
   homepage "https://ziqi.github.io/starshield/"
-  url "https://files.pythonhosted.org/packages/e2/21/8243e23c9008f5f2a74c8f22435fbc8dc17378d576939b163b24aed4da29/starshield_forensics-0.3.8.tar.gz"
-  sha256 "87afc0617eedd5a760a5ddfb7ab5ba002dc930ff25db7ad7cd2d8bd115e19325"
+  url "https://files.pythonhosted.org/packages/07/6a/2c1621721918514f08a92ac3f1ab6556710e07eb9d523e1f4f60beb7d212/starshield_forensics-0.3.9.tar.gz"
+  sha256 "a8323a79c4a22bc4f5835423b1c0559164a073c4876345753c15a2de80caa127"
   license "MIT"
 
   depends_on "python@3.12"
@@ -21,7 +21,7 @@ class StarshieldForensics < Formula
 
   test do
     output = shell_output("#{bin}/starshield demo")
-    assert_match "starshield-forensics/0.3.8", output
+    assert_match "starshield-forensics/0.3.9", output
     mcp_out = pipe_output("#{bin}/starshield mcp", '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' + "\n")
     assert_match "starshield_demo", mcp_out
   end
