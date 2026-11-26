@@ -1,8 +1,8 @@
 class StarshieldForensics < Formula
   desc "Offline Chromium LevelDB carver, container inspector, and read-only MCP CLI"
   homepage "https://ziqi.github.io/starshield/"
-  url "https://files.pythonhosted.org/packages/cb/89/09c327c8f43bd1f3ad62eac22ad8792c88f8be9402151e293383a427817d/starshield_forensics-0.3.11.tar.gz"
-  sha256 "fbb0c7cb9f9430e4685fdc3b29e78ec5039720f55f058badc208d96cabdd7221"
+  url "https://files.pythonhosted.org/packages/c6/39/0ff70aa7567eab344eec0123e3c6ea52e9de20700b0dc18ed1c5429e0d7f/starshield_forensics-0.4.0.tar.gz"
+  sha256 "d66e0ec64c0c84e7a81692b8d020e85ce928e63683de2e1b928c5465c069777c"
   license "MIT"
 
   depends_on "python@3.12"
@@ -20,9 +20,10 @@ class StarshieldForensics < Formula
 
   test do
     output = shell_output("#{bin}/starshield demo")
-    assert_match "starshield-forensics/0.3.11", output
+    assert_match "starshield-forensics/0.4.0", output
     mcp_out = pipe_output("#{bin}/starshield mcp", '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' + "\n")
     assert_match "starshield_demo", mcp_out
+    assert_match "starshield_inspect_pdf_tamper", mcp_out
 
     (testpath/"starshield").mkpath
     (testpath/"starshield/__init__.py").write "raise RuntimeError('SHADOW_HIJACK')\n"
@@ -39,7 +40,7 @@ class StarshieldForensics < Formula
       (usersite/"inject.pth").write "import os; os._exit(99)\n"
 
       safe_out = Dir.chdir(testpath) { shell_output("#{bin}/starshield demo") }
-      assert_match "starshield-forensics/0.3.11", safe_out
+      assert_match "starshield-forensics/0.4.0", safe_out
     ensure
       ENV.delete("PYTHONUSERBASE")
       ENV.delete("PYTHONUSERSITE")
