@@ -19,7 +19,7 @@ starhub render --profile ai-sandbox --target all --dry-run
 starhub audit
 # Note: when writing rendered bundles to disk, pass --out-dir ./dist
 
-# 2. StarShield Forensics — Offline Chromium/Electron LevelDB carver, container inspector & read-only MCP CLI
+# 2. StarShield Forensics — Offline Chromium/Electron LevelDB carver, container structure screener & read-only MCP CLI
 brew install Ziqi/tap/starshield-forensics
 starshield demo
 starshield mcp
@@ -45,7 +45,7 @@ diffquorum init --root /tmp/dq-demo && diffquorum preflight --root /tmp/dq-demo 
 | Formula | Purpose | Upstream & Version | Supply-Chain Provenance |
 | :--- | :--- | :--- | :--- |
 | **`starhub-kit`** | AI Agent sandbox firewall (`nftables`, `macOS pf`, `Tailscale ACL`), `Sing-box`/`Mihomo` QUIC routing, security auditor, and native `MCP` server | [`Ziqi/starhub-kit`](https://github.com/Ziqi/starhub-kit) (`v1.3.0`) | OpenSSF Silver `#16658` · SLSA L3 · Ed25519 `.sig` · SWHID `swh:1:snp:0a98e8ee` |
-| **`starshield-forensics`** | Offline Chromium/Electron LevelDB `.log` carver, PNG/JPEG/PDF container inspector, financial checksum validator, and 8-tool read-only `MCP` server | [`Ziqi/starshield-forensics`](https://github.com/Ziqi/starshield-forensics) (`v0.4.0`) | OpenSSF Silver `#16602` · PyPI PEP 740 · SLSA L3 · Zenodo `10.5281/zenodo.24145804` |
+| **`starshield-forensics`** | Offline Chromium/Electron LevelDB `.log` carver, PNG/JPEG/PDF container structure screener, financial checksum validator, and 8-tool read-only `MCP` server | [`Ziqi/starshield-forensics`](https://github.com/Ziqi/starshield-forensics) (`v0.4.1`) | OpenSSF Silver `#16602` · PyPI PEP 740 · SLSA L3 · Zenodo `10.5281/zenodo.24145804` |
 | **`clearlens`** | Zero-backend BEC, wire fraud & digital coercion triage workbench with outbound DLP guardrails, multi-currency FX stripping, and offline CSP web app | [`Ziqi/clearlens`](https://github.com/Ziqi/clearlens) (`v1.0.0`) | OpenSSF Silver `#16718` · SLSA L3 · REUSE 3.3 · Offline CSP (`default-src 'none'`) · SWHID `swh:1:snp:3f624661` |
 | **`kline-kronos-suite`** | Multi-market (`US`/`Crypto`/`HK`/`CN`) intraday OHLCV cleaner, look-ahead leakage auditor, JSONL window exporter, and native `MCP` server | [`Ziqi/KLine-Kronos-Suite`](https://github.com/Ziqi/KLine-Kronos-Suite) (`v1.2.0`) | OpenSSF Silver `#16679` · SLSA L3 · Ed25519 `.sig` · SWHID `swh:1:snp:d3ac3e0d` |
 | **`diffquorum`** (`starcouncil` alias) | `<400B` pointer blackboard, Stage-2 blind `Peer A/B/C` anti-fake-quorum verifier, modal-safe 6-gate idle wakeup & `<1s` zero-token `preflight` | [`Ziqi/diffquorum`](https://github.com/Ziqi/diffquorum) (`v0.2.0`) | OpenSSF Silver `#16755` · SLSA L3 · Ed25519 `.sig` · SWHID `swh:1:snp:8ebe52ea` |

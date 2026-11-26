@@ -1,8 +1,8 @@
 class StarshieldForensics < Formula
-  desc "Offline Chromium LevelDB carver, container inspector, and read-only MCP CLI"
+  desc "Offline Chromium LevelDB carver, container structure screener, and read-only MCP CLI"
   homepage "https://ziqi.github.io/starshield/"
-  url "https://files.pythonhosted.org/packages/c6/39/0ff70aa7567eab344eec0123e3c6ea52e9de20700b0dc18ed1c5429e0d7f/starshield_forensics-0.4.0.tar.gz"
-  sha256 "d66e0ec64c0c84e7a81692b8d020e85ce928e63683de2e1b928c5465c069777c"
+  url "https://files.pythonhosted.org/packages/9f/7a/fb995bac7f1aebae92f5d061c0bc8c9ddf5b969f8e909c71b68e5c852e31/starshield_forensics-0.4.1.tar.gz"
+  sha256 "922eb9a7d4b18ac6c6fe45bd1f81e23e34c0f9e828d712e97df33b2f9a87be48"
   license "MIT"
 
   depends_on "python@3.12"
@@ -20,7 +20,7 @@ class StarshieldForensics < Formula
 
   test do
     output = shell_output("#{bin}/starshield demo")
-    assert_match "starshield-forensics/0.4.0", output
+    assert_match "starshield-forensics/0.4.1", output
     mcp_out = pipe_output("#{bin}/starshield mcp", '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' + "\n")
     assert_match "starshield_demo", mcp_out
     assert_match "starshield_inspect_pdf_tamper", mcp_out
@@ -40,7 +40,7 @@ class StarshieldForensics < Formula
       (usersite/"inject.pth").write "import os; os._exit(99)\n"
 
       safe_out = Dir.chdir(testpath) { shell_output("#{bin}/starshield demo") }
-      assert_match "starshield-forensics/0.4.0", safe_out
+      assert_match "starshield-forensics/0.4.1", safe_out
     ensure
       ENV.delete("PYTHONUSERBASE")
       ENV.delete("PYTHONUSERSITE")
